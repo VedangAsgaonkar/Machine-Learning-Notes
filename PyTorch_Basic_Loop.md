@@ -7,7 +7,7 @@ n_epochs = 100
 losses = []
 for i in range(n_epochs):
   optimizer.zero_grad()
-  outputs = model.forward(inputs)
+  outputs = model(inputs)
   loss = criterion(outputs,targets)
   losses.append(loss)
   loss.backward()
