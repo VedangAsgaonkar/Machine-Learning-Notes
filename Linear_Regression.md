@@ -7,3 +7,4 @@ w = model.weight.data.numpy()
 b = model.bias.data.numpy()
 print(w,b)
 ```
+The usual loss function for linear regression is MSE 
