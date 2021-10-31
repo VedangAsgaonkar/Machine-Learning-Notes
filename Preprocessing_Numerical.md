@@ -11,3 +11,9 @@ Scatter plots can be used to visualise relation between variables using ```plt.s
 
 ### Transforming
 If we are looking at an exponential relation, a transformation like ```np.log()``` may help. Similiarly for quadratics, ```np.sqrt()``` is useful
+
+### Datatype
+Convert to float
+```
+X = X.astype(np.float32)
+```
