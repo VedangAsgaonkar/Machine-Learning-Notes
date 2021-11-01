@@ -20,7 +20,11 @@ Scatter plots can be used to visualise relation between variables using ```plt.s
 If we are looking at an exponential relation, a transformation like ```np.log()``` may help. Similiarly for quadratics, ```np.sqrt()``` is useful
 
 ### Datatype
-Convert to float
+Convert to float using numpy. For vectors(not matrices), we should use ```Y.reshape(1,-1)``` so that it doesn't have a partial shape
 ```
 X = X.astype(np.float32)
+```
+Then convert to Torch Tensor
+```
+X = torch.from_numpy(X)
 ```
