@@ -22,3 +22,15 @@ plt.plot(test_losses, label='test loss')
 plt.legend()
 plt.show()
  ```
+ 
+ When we are using the model on a test set in or outside the training loop, it is good to do the following
+ ```
+ model.eval() # notifies some layers like dropout to behave differently
+ with model.no_grad(): # donot save gradients, saves memory
+  ...
+ ```
+ If the above code is used, then in the training part of the loop, we need to use
+ ```
+ model.train()
+ ...
+ ```
