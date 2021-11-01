@@ -14,3 +14,4 @@ with model.no_grad():
   p_test = np.round(p_test.numpy())
   test_acc = np.mean(p_test == y_test.numpy())
 ```
+For a multiclass classification, we use categorical cross entropy
