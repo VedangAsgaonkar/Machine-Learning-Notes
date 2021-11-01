@@ -4,6 +4,13 @@ This can be done by:
 ```
 X_normalized = (X-X.mean())/X.std()
 ```
+We generally normalize using scikit-learn
+```
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScalar
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test) # fit the parameters according to the train data
+```
 where X is a numpy vector. Remember to convert back to original scale in case you are interested in values of particular weights/biases like in linear regression.
 
 ### Visualising 
