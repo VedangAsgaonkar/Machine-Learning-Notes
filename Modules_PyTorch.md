@@ -17,10 +17,11 @@ class ANN(nn.Module):
     self.layer2 = nn.ReLU()
     self.layer3 = nn.Linear(128,1)
   def forward(self,x):
-    x = self.layer1(x)
-    x = self.layer2(x)   
-    x = self.layer3(x)
-    return x
+    # do not change x, it has been passed by reference
+    out = self.layer1(x) 
+    out = self.layer2(out)   
+    out = self.layer3(out)
+    return out
  ```
  ```
  model = ANN()
