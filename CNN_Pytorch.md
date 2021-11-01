@@ -1,3 +1,4 @@
+To decide between which of Conv1D, Conv2D and Conv3D to use, see in which dimensions are spacial features important. In an rgb image, the tensor is 3D, but spacial features are present only in 2 dimensions, so we use Conv2D. If we are processing a signal, we will use Conv1D as only spacial features are important along the time dimension. To process a rgb video which is 4 dimensional tensor, we use Conv3D as spacial features are important along the width, height and time
 ### Conv 2D
 Makes a kernel that slides along two dimensions. So suppose we have a 24x24 RGB image, we have an
 input which is a 24x24x3 tensor. If we write 
