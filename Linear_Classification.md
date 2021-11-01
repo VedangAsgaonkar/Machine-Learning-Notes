@@ -2,7 +2,7 @@ In simple binary classification, the typical model is Sequential like
 ```
 model = nn.Sequential(
           nn.Linear(D,1),
-          nn.Sigmoid()
+          nn.Softmax()
          )
 ```
 The typical loss is ```nn.BCELoss()``` and optimizer is ```torch.optim.Adam(model.parameters())```
@@ -14,4 +14,5 @@ with model.no_grad():
   p_test = np.round(p_test.numpy())
   test_acc = np.mean(p_test == y_test.numpy())
 ```
-For a multiclass classification, we use categorical cross entropy
+For a multiclass classification, we use categorical cross entropy, with a softmax at the end. PyTorch combines these two together, so that we don't need to add the 
+softmax layer. We simply have to use ```criterion = nn.CrossEntropyLoss()```
