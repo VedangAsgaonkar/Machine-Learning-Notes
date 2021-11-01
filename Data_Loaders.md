@@ -2,8 +2,8 @@ To deal with data in batches(so as to not overload the memory), we can use data 
 generators, so we can iterate over them
 ```
 batch_size = 128
-train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=1, shuffle=True)
-test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=1, shuffle=False)
+train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
+test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 ```
 Now the training loop will look like
 ```
