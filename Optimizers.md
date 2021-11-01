@@ -10,3 +10,6 @@ Stochastic Gradient Descent is different from Gradient Descent in the fact that 
 
 ### Choosing the learning rate
 We can judge how good our learning rate is by seeing the graph of losses converging. We generally try powers of 10 like 0.1, 0.01, 0.001. [Learning Parameters, Part 4: Tips For Adjusting Learning Rate, Line Search](https://towardsdatascience.com/learning-parameters-part-4-6a18d1d3000b)
+
+### Powerful Optimizers
+Adagrad and RMSProp take smaller steps near convergence and also help to train sparse parameters. Adam combines this advantage with the speed of momentum and is more or less the default choice. [Learning Parameters, Part 5: AdaGrad, RMSProp, and Adam](https://towardsdatascience.com/learning-parameters-part-5-65a2f3583f7d)
