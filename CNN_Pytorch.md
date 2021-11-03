@@ -22,3 +22,8 @@ performs batch normalisation along the width and height dimensions for the data 
 nn.MaxPool2d(2)
 ```
 performs max pooling in squares of size 2 x 2
+
+### Resources
+Some excellent resources:
+* [Convolutional Neural Networks — A Beginner’s Guide](https://towardsdatascience.com/convolution-neural-networks-a-beginners-guide-implementing-a-mnist-hand-written-digit-8aa60330d022)
+* [Grouped Convolutions — convolutions in parallel](https://towardsdatascience.com/grouped-convolutions-convolutions-in-parallel-3b8cc847e851)
