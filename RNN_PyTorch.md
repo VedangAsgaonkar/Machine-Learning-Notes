@@ -14,7 +14,7 @@ class SimpleRNN(nn.Module):
     self.M = n_hidden # how large in the hidden state vector
     self.L = n_rnnlayers # how many rnn layers to stack on top of one another. Note that this has nothing to do with the size of the time series
     self.K = n_outputs # final output size
-    
+    # batch_first = True so that we have a properly formatted output
     self.RNN = nn.RNN( input_size = self.D, hidden_size = self.M, num_layers = self.L, nonlinearity = 'relu', batch_first = True)
     self.fc = nn.Linear(self.M, self.K)
     
