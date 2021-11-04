@@ -31,3 +31,26 @@ dataset = ttd.TabularDataset(
   fields = [('data',TEXT),('label',LABEL)] # map the headers in the csv to Field objects in the code
 )
 ```
+### Train-Test split
+```
+train_dataset, test_dataset = dataset.split(0.8)
+```
+### Making a vocabulary
+```
+TEXT.build_vocab(train_dataset,) # notice the peculiar syntax
+vocab = Text.vocab
+```
+### Making the generators
+```
+train_iter, test_iter = ttd.Iterator.splits(
+  (train_dataset, test_dataset), 
+  sort_key = lambda x : len(x.data), # The batches returned are sorted by length of sentence, so that sentences of similar length are in the same batch
+  batch_size = (32,256), # We have a batch size of 32 for the train data and 256 for the test, since there is not back prop for the test data
+  device = device
+)
+```
+### Using the generators
+```
+for inputs, targets in train_iter :
+  ...
+```
