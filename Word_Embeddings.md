@@ -3,3 +3,7 @@ representations. [Introduction to Word Embedding and Word2Vec](https://towardsda
 There are two main algorithms used to make word embeddings :
 * [Word2Vec — Skip-gram and CBOW](https://towardsdatascience.com/nlp-101-word2vec-skip-gram-and-cbow-93512ee24314)
 * [Negative Sampling and GloVe](https://towardsdatascience.com/nlp-101-negative-sampling-and-glove-936c88f3bc68)
+
+### Embeddings in PyTorch
+* **Pre-trained**:[How to use Pre-trained Word Embeddings in PyTorch](https://medium.com/@martinpella/how-to-use-pre-trained-word-embeddings-in-pytorch-71ca59249f76)
+* **Trainable**: We can simply use ```nn.Embedding(vocab_size, embedding_size)``` in the model
