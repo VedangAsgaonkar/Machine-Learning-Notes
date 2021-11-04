@@ -14,5 +14,6 @@ with model.no_grad():
   p_test = np.round(p_test.numpy())
   test_acc = np.mean(p_test == y_test.numpy())
 ```
+We may also use the loss as ```nn.BCEWithLogitsLoss()``` and not use the Softmax layer
 For a multiclass classification, we use categorical cross entropy ```nn.NLLLoss()```, with a softmax ```nn.Softmax()``` at the end. PyTorch combines these two together, so that we don't need to add the 
 softmax layer. We simply have to use ```criterion = nn.CrossEntropyLoss()```
