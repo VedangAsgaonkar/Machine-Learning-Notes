@@ -11,3 +11,16 @@ There are two main algorithms used to make word embeddings :
 self.emb.weight.data = nn.Parameter(torch.Tensor(np.random.randn(self.N, self.D) * 0.01))
 ```
 The embedding layer in pytorch directly takes in an index as input rather than a one hot vector, saving space
+
+### Generalizing
+Embedding layers are in general used to encode any categorical "sparse" variable into a dense lower dimensional vector. We generally have the following pre-processing steps
+```
+# df in the data frame having our sparse variable x. We are going to convert x to a categorical variable
+df.x = pd.Categorical(df.x)
+df['new_x'] = df.x.cat.codes
+```
+Once this is done, we can convert the ```df.x``` column to a numpy array and torch tensor. To create the embedding layer for this, we need to find the "size of vocabulary", which we can do with
+```
+V = len(set(x))
+```
+This has applications in NLP, recommender systems etc.
