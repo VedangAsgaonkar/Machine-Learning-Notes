@@ -10,4 +10,4 @@ There are two main algorithms used to make word embeddings :
 ```
 self.emb.weight.data = nn.Parameter(torch.Tensor(np.random.randn(self.N, self.D) * 0.01))
 ```
-
+The embedding layer in pytorch directly takes in an index as input rather than a one hot vector, saving space
