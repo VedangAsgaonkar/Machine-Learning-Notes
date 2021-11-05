@@ -6,4 +6,8 @@ There are two main algorithms used to make word embeddings :
 
 ### Embeddings in PyTorch
 * **Pre-trained**:[How to use Pre-trained Word Embeddings in PyTorch](https://medium.com/@martinpella/how-to-use-pre-trained-word-embeddings-in-pytorch-71ca59249f76)
-* **Trainable**: We can simply use ```nn.Embedding(vocab_size, embedding_size)``` in the model
+* **Trainable**: We can simply use ```nn.Embedding(vocab_size, embedding_size)``` in the model. In the default layer that PyTorch provides, the weights are randomly initialized by sampling from a gaussian distribution. We can change the initialisation like
+```
+self.emb.weight.data = nn.Parameter(torch.Tensor(np.random.randn(self.N, self.D) * 0.01))
+```
+
