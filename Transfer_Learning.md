@@ -9,3 +9,15 @@ Some typical models whose weights are used in transfer learning are VGG, ResNet(
 We can take two approaches to use the inherited weights :
 * Since the weights do not change during training, we can pre-compute the output of all inputs through these instead of computing in every epoch. This has the dissadvantage that we cannot augment the data
 * Use data augmentation, and use the weights in every epoch
+
+### Pre-processing
+When we feed in images to a transfer learning model, we have to be careful about the data being of the same format as the data in which the model was 
+trained on. For example, vgg16 requires the following transforms to be applied, besides other transforms that we may choose to apply
+```
+vgg_transforms = torchvision.transforms.Compose([
+  transforms.Resize(size=256),
+  transforms.CenterCrop(size=224),
+  transforms.ToTensor(),
+  transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+])
+```
