@@ -21,3 +21,17 @@ vgg_transforms = torchvision.transforms.Compose([
   transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 ])
 ```
+### Loading pre-trained models
+```
+model = models.vgg16(pretrained=True)
+
+# Freeze VGG weights
+for param in model.parameters():
+  param.requires_grad = False
+```
+### Editing pre-trained models
+vgg16 has an fc layer called classifier. We can redefine the fc layer as
+```
+model.classifier = nn.Linear(25088, 2)
+```
+Similarly, we can add our own layers on top
